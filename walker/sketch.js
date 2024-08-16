@@ -1,10 +1,7 @@
 let walker;
-let width = 800;
-let height = 800;
-let depth = 800;
 let slider;
 function setup() {
-  createCanvas(width, height, WEBGL);
+	createCanvas(displayWidth, displayHeight, WEBGL);
   slider = createSlider(1, 20, 6);
   angleMode(DEGREES);
   noFill();

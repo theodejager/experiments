@@ -2,7 +2,7 @@ let toruses = []; // Array to hold the toruses
 let numToruses = 10; // Number of toruses to create
 
 function setup() {
-  createCanvas(1000, 1000, WEBGL);
+  createCanvas(displayWidth, displayHeight, WEBGL);
 
   // Populate the array with toruses
   for (let i = 0; i < numToruses; i++) {
