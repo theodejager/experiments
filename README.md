@@ -1,3 +1,3 @@
 # experiments
-[walker](/walker)
-[torus](/torus)
+[walker](/experiments/walker) |
+[torus](/experiments/torus)
