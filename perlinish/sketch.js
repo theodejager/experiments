@@ -1,5 +1,6 @@
 function setup() {
 	createCanvas(displayWidth, displayHeight);
+	osc = new p5.Oscillator();
 	walker = new Walker();
  }
 
@@ -8,6 +9,7 @@ function setup() {
 
 	walker.step();
 	walker.show();
+	walker.noise();
  }
 
  class Walker {
@@ -20,6 +22,7 @@ function setup() {
 		this.y = height/2;
 		this.radius = 30;
 		this.randomDeviation = 0.01;
+		this.frequency = 800;
 	 }
 
 	 step() {
@@ -41,6 +44,7 @@ function setup() {
 			this.y = height;
 		}
 		this.radius = map( noise(this.tradius), 0, 1, 10, 100);
+		this.frequency = map( noise(this.tradius), 0, 1, 440, 110);
 		this.x += offSetX;
 		this.y += offSetY;
 		this.tx += this.randomDeviation;
@@ -51,5 +55,11 @@ function setup() {
 
 	 show() {
 		 ellipse(this.x, this.y, this.radius, this.radius);
+	 }
+	 noise() {
+		osc.freq(this.frequency);
+		osc.setType('saw');
+		osc.amp(0.5);
+		osc.start();
 	 }
  }
