@@ -54,12 +54,13 @@ function setup() {
 
 
 	 show() {
+
 		 ellipse(this.x, this.y, this.radius, this.radius);
 	 }
 	 noise() {
 		osc.freq(this.frequency);
-		osc.setType('saw');
-		osc.amp(0.5);
+		osc.setType('sawtooth');
+		osc.amp(0.02);
 		osc.start();
 	 }
  }
