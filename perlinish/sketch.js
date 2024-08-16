@@ -19,6 +19,7 @@ function setup() {
 		this.x = width/2;
 		this.y = height/2;
 		this.radius = 30;
+		this.randomDeviation = 0.01;
 	 }
 
 	 step() {
@@ -42,9 +43,9 @@ function setup() {
 		this.radius = map( noise(this.tradius), 0, 1, 10, 100);
 		this.x += offSetX;
 		this.y += offSetY;
-		this.tx += 0.01;
-		this.ty += 0.01;
-		this.tradius += 0.01;
+		this.tx += this.randomDeviation;
+		this.ty += this.randomDeviation;
+		this.tradius += this.randomDeviation;
 	}
 
 
