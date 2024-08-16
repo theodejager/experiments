@@ -26,20 +26,16 @@ function setup() {
 
 		if ( ( this.x + offSetX ) > width ) {
 			this.x = 0;
-			// offSetX = - Math.abs(offSetX);
 		}
 		if ( ( this.x + offSetX ) < 0 ) {
 			this.x = width;
-			offSetX = Math.abs(offSetX);
 		}
 
 		if ( ( this.y + offSetY ) > height ) {
 			this.y = 0;
-			// offSetY = - Math.abs(offSetY);
 		}
 		if ( ( this.y + offSetY ) < 0 ) {
 			this.y = height;
-			offSetY = Math.abs(offSetY);
 		}
 
 		this.x += offSetX;
