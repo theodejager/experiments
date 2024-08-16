@@ -44,7 +44,7 @@ function setup() {
 			this.y = height;
 		}
 		this.radius = map( noise(this.tradius), 0, 1, 10, 100);
-		this.frequency = map( noise(this.tradius), 0, 1, 440, 110);
+		this.frequency = map( noise(this.tradius), 0, 1, 110, 440);
 		this.x += offSetX;
 		this.y += offSetY;
 		this.tx += this.randomDeviation;
