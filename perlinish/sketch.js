@@ -44,12 +44,13 @@ function setup() {
 			this.y = height;
 		}
 		this.radius = map( noise(this.tradius), 0, 1, 10, 100);
-		this.frequency = map( noise(this.tradius), 0, 1, 110, 440);
+		this.frequency = map( noise(this.tradius), 0, 1, 55, 440);
 		this.x += offSetX;
 		this.y += offSetY;
 		this.tx += this.randomDeviation;
 		this.ty += this.randomDeviation;
 		this.tradius += this.randomDeviation;
+		let types = ['sine', 'triangle', 'sawtoooth', 'square'];
 	}
 
 
@@ -59,8 +60,20 @@ function setup() {
 	 }
 	 noise() {
 		osc.freq(this.frequency);
-		osc.setType('sawtooth');
-		osc.amp(0.02);
+		osc.setType(typeIterator());
+		osc.amp(0.2);
 		osc.start();
 	 }
  }
+ let types = ['sine', 'triangle', 'sawtooth', 'square'];
+ let typeIterator = createTypeIterator(types);
+ function createTypeIterator(types) {
+	let index = 0;
+
+	return function() {
+		 if (index >= types.length) {
+			  index = 0; // Reset the index if we've gone through all the types
+		 }
+		 return types[index++];
+	};
+}
