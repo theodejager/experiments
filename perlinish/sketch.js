@@ -25,16 +25,20 @@ function setup() {
 		let offSetY = map(noise(this.ty), 0, 1, -baseStepSize, baseStepSize);
 
 		if ( ( this.x + offSetX ) > width ) {
-			offSetX = - Math.abs(offSetX);
+			this.x = 0;
+			// offSetX = - Math.abs(offSetX);
 		}
 		if ( ( this.x + offSetX ) < 0 ) {
+			this.x = width;
 			offSetX = Math.abs(offSetX);
 		}
 
 		if ( ( this.y + offSetY ) > height ) {
-			offSetY = - Math.abs(offSetY);
+			this.y = 0;
+			// offSetY = - Math.abs(offSetY);
 		}
 		if ( ( this.y + offSetY ) < 0 ) {
+			this.y = height;
 			offSetY = Math.abs(offSetY);
 		}
 
