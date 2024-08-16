@@ -1,3 +1,4 @@
 # experiments
 [walker](/experiments/walker) |
-[torus](/experiments/torus)
+[torus](/experiments/torus) |
+[perlinish](/experiments/perlinish)
