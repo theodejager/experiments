@@ -15,8 +15,10 @@ function setup() {
 	 constructor() {
 		this.tx = 0;
 		this.ty = 10000;
+		this.tradius = 20000;
 		this.x = width/2;
 		this.y = height/2;
+		this.radius = 30;
 	 }
 
 	 step() {
@@ -37,15 +39,16 @@ function setup() {
 		if ( ( this.y + offSetY ) < 0 ) {
 			this.y = height;
 		}
-
+		this.radius = map( noise(this.tradius), 0, 1, 10, 100);
 		this.x += offSetX;
 		this.y += offSetY;
 		this.tx += 0.01;
 		this.ty += 0.01;
+		this.tradius += 0.01;
 	}
 
 
 	 show() {
-		 ellipse(this.x, this.y, 30, 30);
+		 ellipse(this.x, this.y, this.radius, this.radius);
 	 }
  }
